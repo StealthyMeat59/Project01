@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject tp;
     [SerializeField] private GameObject washingPowder;
     [SerializeField] private GameObject soap;
+    [Header("Players")]
+    [SerializeField] private Transform player1;
+    [SerializeField] private Transform player2;
+    
 
     private Dictionary<GameObject, int> items = new Dictionary<GameObject, int>();
 
