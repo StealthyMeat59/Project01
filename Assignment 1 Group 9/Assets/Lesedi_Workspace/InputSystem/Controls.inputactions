@@ -3,7 +3,7 @@
     "name": "Controls",
     "maps": [
         {
-            "name": "PlayerControls",
+            "name": "Player1",
             "id": "89fdb44b-e2d3-4c57-a8b6-92edc4177a21",
             "actions": [
                 {
@@ -51,7 +51,7 @@
             ]
         },
         {
-            "name": "Player2Controls",
+            "name": "Player2",
             "id": "1eb7a72c-b44a-4ef9-b182-091d82b203cd",
             "actions": [
                 {
@@ -97,103 +97,19 @@
                     "isPartOfComposite": false
                 }
             ]
-        },
+        }
+    ],
+    "controlSchemes": [
         {
-            "name": "Player3Controls",
-            "id": "ffaa3eab-22e5-442f-b03d-39edb87bd553",
-            "actions": [
+            "name": "Gamepad",
+            "bindingGroup": "Gamepad",
+            "devices": [
                 {
-                    "name": "Move",
-                    "type": "Value",
-                    "id": "dfab4caa-dcc6-4e0a-88df-e6072f972a63",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "CartAim",
-                    "type": "Value",
-                    "id": "4ff9e001-3b0c-47bc-9119-a6b59d068058",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "dc079af0-39e2-4ef6-8d97-f4c6fd207cc4",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4aefb7ac-de78-4fe7-a2d1-7c4e1c60ca2d",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CartAim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Player4Controls",
-            "id": "993b602a-f7dc-4b6a-a124-2346bd6f77b9",
-            "actions": [
-                {
-                    "name": "Move",
-                    "type": "Value",
-                    "id": "c442c2cc-65b3-4d20-aa74-68d388114060",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "CartAim",
-                    "type": "Value",
-                    "id": "2706b977-6c5e-4402-83e4-c2ca58adcf4d",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "e97d8f47-cb4e-4dfd-8e08-859ce128f958",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "232a78f7-342e-4180-9091-18d2525cd492",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CartAim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
                 }
             ]
         }
-    ],
-    "controlSchemes": []
+    ]
 }

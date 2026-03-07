@@ -6,27 +6,30 @@ public class PickUp : MonoBehaviour
     {
         Debug.Log("Triggered by: " + collision.name);
 
-        if (collision.CompareTag("Player"))
+        GameManager gameManager = FindFirstObjectByType<GameManager>();
+        if (gameManager == null)
         {
-            Debug.Log("Player detected by item: " + gameObject.name);
+            Debug.LogError("GameManager NOT FOUND!");
+            return;
+        }
 
-            GameManager gameManager = FindFirstObjectByType<GameManager>();
+        int points = gameManager.GetPointsForItem(gameObject);
 
-            if (gameManager == null)
-            {
-                Debug.LogError("GameManager NOT FOUND!");
-                return;
-            }
-            else
-            {
-                Debug.Log("GameManager found");
-            }
-
-            int points = gameManager.GetPointsForItem(gameObject);
-            gameManager.AddPoints(points);
-
-            Debug.Log("Destroying item: " + gameObject.name);
+        if (collision.CompareTag("Player1"))
+        {
+            Debug.Log("Player1 picked up: " + gameObject.name + " | Points: " + points);
+            gameManager.AddPointsToPlayer(1, points);
             Destroy(gameObject);
+        }
+        else if (collision.CompareTag("Player2"))
+        {
+            Debug.Log("Player2 picked up: " + gameObject.name + " | Points: " + points);
+            gameManager.AddPointsToPlayer(2, points);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.LogWarning("Pickup triggered by non-player object: " + collision.name);
         }
     }
 }
