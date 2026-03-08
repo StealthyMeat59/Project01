@@ -14,9 +14,12 @@ public class PlayerOneCart : MonoBehaviour
     private Vector2 aimInput;
     private Vector2 playerDirection;
 
+    AudioManager audioManager;
+
     private void Awake()
     {
         controls = new Controls();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void OnEnable()
@@ -61,5 +64,10 @@ public class PlayerOneCart : MonoBehaviour
         Quaternion targetRot = Quaternion.Euler(0, 0, angle);
 
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, cartRotateSpeed * Time.deltaTime);
+
+        if (aimInput.sqrMagnitude > 0.01f)
+            audioManager.PlayCartMove();
+        else
+            audioManager.StopCartMove();
     }
 }
