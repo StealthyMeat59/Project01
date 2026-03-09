@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7796177916804339106}
   - component: {fileID: 1796961290065118962}
+  - component: {fileID: -3787193868773995277}
+  - component: {fileID: -1606642416406899093}
   m_Layer: 0
   m_Name: DISHWASHING LIQUID_0
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,9 +79,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1482770677
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -183700499469383854, guid: 25a615588b04b0f408d0e845d55c30d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -91,3 +93,94 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &-3787193868773995277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711340234048780270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9d4391830f9224daf522d7315e7fe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUp
+--- !u!60 &-1606642416406899093
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711340234048780270}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.99, y: 3.82}
+    newSize: {x: 1.99, y: 3.82}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.995, y: -0.08}
+      - {x: 0.98499995, y: 0.45999998}
+      - {x: 0.965, y: 0.57}
+      - {x: 0.91499996, y: 0.65999997}
+      - {x: 0.825, y: 0.75}
+      - {x: 0.775, y: 0.78}
+      - {x: 0.59499997, y: 1.03}
+      - {x: 0.415, y: 1.18}
+      - {x: 0.325, y: 1.1899999}
+      - {x: 0.325, y: 1.49}
+      - {x: 0.48499998, y: 1.52}
+      - {x: 0.585, y: 1.5799999}
+      - {x: 0.53499997, y: 1.91}
+      - {x: 0.195, y: 1.91}
+      - {x: -0.905, y: 1.79}
+      - {x: -0.995, y: 1.6999999}
+      - {x: -0.995, y: 1.5699999}
+      - {x: -0.905, y: 1.49}
+      - {x: -0.035, y: 1.51}
+      - {x: -0.024999999, y: 1.2099999}
+      - {x: -0.16499999, y: 1.15}
+      - {x: -0.315, y: 0.98999995}
+      - {x: -0.655, y: 0.61}
+      - {x: -0.695, y: 0.29999998}
+      - {x: -0.705, y: -1.5699999}
+      - {x: -0.625, y: -1.75}
+      - {x: -0.53499997, y: -1.8299999}
+      - {x: -0.385, y: -1.91}
+      - {x: 0.625, y: -1.91}
+      - {x: 0.765, y: -1.86}
+      - {x: 0.895, y: -1.78}
+      - {x: 0.995, y: -1.5999999}
+  m_UseDelaunayMesh: 1

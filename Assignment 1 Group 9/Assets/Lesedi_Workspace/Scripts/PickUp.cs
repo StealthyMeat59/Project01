@@ -2,45 +2,55 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    AudioManager audioManager;
+    private Transform spawnPoint;
+    private AudioManager audioManager;
+
+    // Reference to the original prefab to get points correctly
+    private GameObject originalPrefab;
 
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio")?.GetComponent<AudioManager>();
+    }
+
+    // Called by GameManager when spawning the item
+    public void Initialize(GameObject prefabReference)
+    {
+        originalPrefab = prefabReference;
+    }
+
+    public void SetSpawnPoint(Transform point)
+    {
+        spawnPoint = point;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Triggered by: " + collision.name);
+        GameManager gm = FindObjectOfType<GameManager>();
+        if (gm == null || originalPrefab == null) return;
 
-        GameManager gameManager = FindFirstObjectByType<GameManager>();
-        if (gameManager == null)
-        {
-            Debug.LogError("GameManager NOT FOUND!");
-            return;
-        }
-
-        int points = gameManager.GetPointsForItem(gameObject);
+        int points = gm.GetPointsForItem(originalPrefab);
 
         if (collision.CompareTag("Player1"))
         {
-            Debug.Log("Playing pickup sound");
-            audioManager.PlaySFX(audioManager.pickingUpItem);
-            Debug.Log("Player1 picked up: " + gameObject.name + " | Points: " + points);
-            gameManager.AddPointsToPlayer(1, points);
-            Destroy(gameObject);
+            HandlePickup(1, points, gm);
         }
         else if (collision.CompareTag("Player2"))
         {
-            Debug.Log("Playing pickup sound");
+            HandlePickup(2, points, gm);
+        }
+    }
+
+    private void HandlePickup(int playerNumber, int points, GameManager gm)
+    {
+        if (audioManager != null)
             audioManager.PlaySFX(audioManager.pickingUpItem);
-            Debug.Log("Player2 picked up: " + gameObject.name + " | Points: " + points);
-            gameManager.AddPointsToPlayer(2, points);
-            Destroy(gameObject);
-        }
-        else
-        {
-            Debug.LogWarning("Pickup triggered by non-player object: " + collision.name);
-        }
+
+        gm.AddPointsToPlayer(playerNumber, points);
+
+        if (spawnPoint != null)
+            gm.OnItemPickedUp(spawnPoint);
+
+        Destroy(gameObject);
     }
 }
