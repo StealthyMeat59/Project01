@@ -65,9 +65,9 @@ public class PlayerOneCart : MonoBehaviour
 
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, cartRotateSpeed * Time.deltaTime);
 
-        if (aimInput.sqrMagnitude > 0.01f)
+        /*if (aimInput.sqrMagnitude > 0.01f)
             audioManager.PlayCartMove();
         else
-            audioManager.StopCartMove();
+            audioManager.StopCartMove();*/
     }
 }
