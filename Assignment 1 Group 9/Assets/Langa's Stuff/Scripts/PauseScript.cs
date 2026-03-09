@@ -20,7 +20,7 @@ public class PauseScript : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("PauseMenu");
+        SceneManager.LoadScene("MovementTest2");
     }
 
     public void QuitGame()
