@@ -11,10 +11,15 @@ public class PlayerOne : MonoBehaviour
     private Controls controls;
     private Vector2 moveInput;
 
+    AudioManager audioManager;
+    bool isMoving;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         controls = new Controls();
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void OnEnable()
@@ -47,6 +52,22 @@ public class PlayerOne : MonoBehaviour
 
             if (cartController != null)
                 cartController.UpdatePlayerDirection(transform.up);
+
+            if (!isMoving)
+            {
+                audioManager.SFXSource.clip = audioManager.cartMoving;
+                audioManager.SFXSource.loop = true;
+                audioManager.SFXSource.Play();
+                isMoving = true;
+            }
+        }
+        else
+        {
+            if (isMoving)
+            {
+                audioManager.SFXSource.Stop();
+                isMoving = false;
+            }
         }
     }
 }
