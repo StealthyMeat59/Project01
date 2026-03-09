@@ -9,10 +9,12 @@ public class PlayerTwo : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
+    private PlayerInput playerInput;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -29,8 +31,7 @@ public class PlayerTwo : MonoBehaviour
             float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg - 90f;
             rb.MoveRotation(angle);
 
-            if (cartController != null)
-                cartController.UpdatePlayerDirection(transform.up);
+            cartController?.UpdatePlayerDirection(transform.up);
         }
     }
 }

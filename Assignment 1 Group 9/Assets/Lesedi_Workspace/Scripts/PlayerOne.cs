@@ -8,32 +8,13 @@ public class PlayerOne : MonoBehaviour
     public PlayerOneCart cartController;
 
     private Rigidbody2D rb;
-    private Controls controls;
     private Vector2 moveInput;
-
-    AudioManager audioManager;
-    bool isMoving;
+    private PlayerInput playerInput;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        controls = new Controls();
-
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
-
-    private void OnEnable()
-    {
-        controls.Player1.Enable();
-        controls.Player1.Move.performed += OnMove;
-        controls.Player1.Move.canceled += OnMove;
-    }
-
-    private void OnDisable()
-    {
-        controls.Player1.Move.performed -= OnMove;
-        controls.Player1.Move.canceled -= OnMove;
-        controls.Player1.Disable();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -50,24 +31,7 @@ public class PlayerOne : MonoBehaviour
             float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg - 90f;
             rb.MoveRotation(angle);
 
-            if (cartController != null)
-                cartController.UpdatePlayerDirection(transform.up);
-
-            if (!isMoving)
-            {
-                audioManager.SFXSource.clip = audioManager.cartMoving;
-                audioManager.SFXSource.loop = true;
-                audioManager.SFXSource.Play();
-                isMoving = true;
-            }
-        }
-        else
-        {
-            if (isMoving)
-            {
-                audioManager.SFXSource.Stop();
-                isMoving = false;
-            }
+            cartController?.UpdatePlayerDirection(transform.up);
         }
     }
 }

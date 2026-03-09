@@ -301,10 +301,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6959402317284420782, guid: 4515037d9fe51324a942c053891a8b39, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 635386548}
+      addedObject: {fileID: 635386547}
     - targetCorrespondingSourceObject: {fileID: 6959402317284420782, guid: 4515037d9fe51324a942c053891a8b39, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 635386547}
+      addedObject: {fileID: 635386552}
   m_SourcePrefab: {fileID: 100100000, guid: 4515037d9fe51324a942c053891a8b39, type: 3}
 --- !u!1 &395535922
 GameObject:
@@ -382,7 +382,7 @@ MonoBehaviour:
     m_ActionName: 'Player1/CartAim[/XInputControllerWindows/rightStick,/DualSenseGamepadHID/rightStick]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 456619739}
+      - m_Target: {fileID: 456619743}
         m_TargetAssemblyTypeName: PlayerTwo, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -412,12 +412,12 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f82e8983-d653-4809-8b9f-d8a35767308b
     m_ActionName: 'Player2/CartAim[/XInputControllerWindows/rightStick,/DualSenseGamepadHID/rightStick]'
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player2
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &456619739
+--- !u!114 &456619743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 635386548}
+      - m_Target: {fileID: 635386552}
         m_TargetAssemblyTypeName: PlayerOne, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -484,9 +484,9 @@ MonoBehaviour:
     m_ActionName: 'Player1/Move[/XInputControllerWindows/leftStick,/DualSenseGamepadHID/leftStick]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1766727706}
+      - m_Target: {fileID: 1766727705}
         m_TargetAssemblyTypeName: PlayerOneCart, Assembly-CSharp
-        m_MethodName: OnCartAim
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -507,11 +507,11 @@ MonoBehaviour:
     m_ActionId: f82e8983-d653-4809-8b9f-d8a35767308b
     m_ActionName: 'Player2/CartAim[/XInputControllerWindows/rightStick,/DualSenseGamepadHID/rightStick]'
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player1
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &635386548
+--- !u!114 &635386552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5292,10 +5292,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4460795829677635667, guid: 0e5edd570ece31b479e290def196cbd7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 456619739}
+      addedObject: {fileID: 456619738}
     - targetCorrespondingSourceObject: {fileID: 4460795829677635667, guid: 0e5edd570ece31b479e290def196cbd7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 456619738}
+      addedObject: {fileID: 456619743}
   m_SourcePrefab: {fileID: 100100000, guid: 0e5edd570ece31b479e290def196cbd7, type: 3}
 --- !u!1 &1000890230
 GameObject:
@@ -5625,9 +5625,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1482770677
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6005,9 +6005,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1482770677
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6125,24 +6125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b21c083d73765e4eaec596bded827b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  milk: {fileID: 5808945745992117289, guid: eb714650934776a4893871d18eb9e3fc, type: 3}
-  tp: {fileID: 1532770850469862835, guid: 3495bb890710e0c4999178f46fa07de0, type: 3}
-  washingPowder: {fileID: 7958172984299489201, guid: 0c8c22054d5406444b0328f7d79d5b17, type: 3}
-  soap: {fileID: 3918734168880604430, guid: 46c871aa24b46ca41acf5af4f717481f, type: 3}
-  bread: {fileID: 270120724488210285, guid: a309f5a4f3449f24e9b31391501c3fee, type: 3}
-  coffee: {fileID: 8187223508555715577, guid: 7398893e46cf89940b4322102fd1f6c7, type: 3}
-  coke: {fileID: 2047643292647172733, guid: 18114b5a907a7c443b974e5732016584, type: 3}
-  dishSoap: {fileID: 711340234048780270, guid: cbe60992900fdca4fb40ab091fcbc975, type: 3}
-  player1: {fileID: 635386546}
-  player2: {fileID: 456619737}
-  player1Input: {fileID: 635386547}
-  player2Input: {fileID: 456619738}
-  player1Points: 0
-  player2Points: 0
-  roundDuration: 120
-  timerText: {fileID: 0}
-  player1PointsText: {fileID: 0}
-  player2PointsText: {fileID: 0}
   itemPrefabs:
   - {fileID: 270120724488210285, guid: a309f5a4f3449f24e9b31391501c3fee, type: 3}
   - {fileID: 7958172984299489201, guid: 0c8c22054d5406444b0328f7d79d5b17, type: 3}
@@ -6160,6 +6142,16 @@ MonoBehaviour:
   - {fileID: 1857673085}
   - {fileID: 1413060655}
   - {fileID: 950554355}
+  player1: {fileID: 635386546}
+  player2: {fileID: 456619737}
+  player1Input: {fileID: 635386547}
+  player2Input: {fileID: 456619738}
+  player1Points: 0
+  player2Points: 0
+  roundDuration: 120
+  timerText: {fileID: 0}
+  player1PointsText: {fileID: 0}
+  player2PointsText: {fileID: 0}
 --- !u!4 &1883601923
 Transform:
   m_ObjectHideFlags: 0
