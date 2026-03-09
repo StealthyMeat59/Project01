@@ -155,8 +155,14 @@ MonoBehaviour:
   soap: {fileID: 400921773}
   player1: {fileID: 911565935}
   player2: {fileID: 911565935}
+  player1Input: {fileID: 911565936}
+  player2Input: {fileID: 1999695840}
   player1Points: 0
   player2Points: 0
+  roundDuration: 120
+  timerText: {fileID: 0}
+  player1PointsText: {fileID: 0}
+  player2PointsText: {fileID: 0}
 --- !u!4 &283724373
 Transform:
   m_ObjectHideFlags: 0
@@ -533,7 +539,7 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f82e8983-d653-4809-8b9f-d8a35767308b
     m_ActionName: 'Player2Controls/CartAim[/XInputControllerWindows/rightStick]'
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player1
   m_SplitScreenIndex: -1
@@ -966,7 +972,7 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f82e8983-d653-4809-8b9f-d8a35767308b
     m_ActionName: 'Player2Controls/CartAim[/XInputControllerWindows/rightStick]'
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player2
   m_SplitScreenIndex: -1

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; // optional if using TextMeshPro for UI
+using TMPro;
+using UnityEngine.InputSystem;  
 
 public class GameManager : MonoBehaviour
 {
@@ -14,12 +15,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform player1;
     [SerializeField] private Transform player2;
 
+    [Header("Player Input Components")]
+    [SerializeField] private PlayerInput player1Input;
+    [SerializeField] private PlayerInput player2Input;
+
     [Header("Player Points")]
     public int player1Points = 0;
     public int player2Points = 0;
 
     [Header("Round Timer")]
-    public float roundDuration = 120f; // 2 minutes
+    public float roundDuration = 120f;
     private float timer;
     private bool roundActive = false;
 
@@ -47,15 +52,38 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        AssignControllers(); // NEW
         StartRound();
+    }
+
+    private void AssignControllers()
+    {
+        var gamepads = Gamepad.all;
+
+        if (gamepads.Count > 0)
+        {
+            player1Input.SwitchCurrentControlScheme("Gamepad", gamepads[0]);
+            Debug.Log("Player 1 assigned to Controller 1");
+        }
+
+        if (gamepads.Count > 1)
+        {
+            player2Input.SwitchCurrentControlScheme("Gamepad", gamepads[1]);
+            Debug.Log("Player 2 assigned to Controller 2");
+        }
+
+        if (gamepads.Count < 2)
+        {
+            Debug.LogWarning("Not enough controllers connected for 2 players!");
+        }
     }
 
     private void Update()
     {
         if (!roundActive) return;
 
-        // Countdown timer
         timer -= Time.deltaTime;
+
         if (timer <= 0f)
         {
             timer = 0f;
@@ -72,6 +100,7 @@ public class GameManager : MonoBehaviour
         roundActive = true;
         player1Points = 0;
         player2Points = 0;
+
         UpdateUI();
         Debug.Log("Round started! 2 minutes on the clock.");
     }
@@ -79,14 +108,13 @@ public class GameManager : MonoBehaviour
     private void EndRound()
     {
         Debug.Log("Round ended!");
+
         if (player1Points > player2Points)
             Debug.Log("Player 1 wins! Score: " + player1Points + " - " + player2Points);
         else if (player2Points > player1Points)
             Debug.Log("Player 2 wins! Score: " + player2Points + " - " + player1Points);
         else
             Debug.Log("It's a tie! Score: " + player1Points + " - " + player2Points);
-
-        // Optional: disable player movement or show end screen here
     }
 
     private void UpdateUI()
@@ -101,7 +129,6 @@ public class GameManager : MonoBehaviour
             player2PointsText.text = player2Points.ToString();
     }
 
-    // Get points for a specific item
     public int GetPointsForItem(GameObject item)
     {
         if (items.ContainsKey(item))
@@ -111,10 +138,9 @@ public class GameManager : MonoBehaviour
         return 0;
     }
 
-    // Add points to a specific player
     public void AddPointsToPlayer(int playerNumber, int amount)
     {
-        if (!roundActive) return; // ignore pickups after round ends
+        if (!roundActive) return;
 
         if (playerNumber == 1)
             player1Points += amount;

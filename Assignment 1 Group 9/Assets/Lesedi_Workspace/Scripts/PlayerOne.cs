@@ -8,27 +8,11 @@ public class PlayerOne : MonoBehaviour
     public PlayerOneCart cartController;
 
     private Rigidbody2D rb;
-    private Controls controls;
     private Vector2 moveInput;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        controls = new Controls();
-    }
-
-    private void OnEnable()
-    {
-        controls.Player1.Enable();
-        controls.Player1.Move.performed += OnMove;
-        controls.Player1.Move.canceled += OnMove;
-    }
-
-    private void OnDisable()
-    {
-        controls.Player1.Move.performed -= OnMove;
-        controls.Player1.Move.canceled -= OnMove;
-        controls.Player1.Disable();
     }
 
     public void OnMove(InputAction.CallbackContext context)
