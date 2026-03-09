@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject tp;
     [SerializeField] private GameObject washingPowder;
     [SerializeField] private GameObject soap;
+    [SerializeField] private GameObject bread;
+    [SerializeField] private GameObject coffee;
+    [SerializeField] private GameObject coke;
+    [SerializeField] private GameObject DishSoap;
 
     [Header("Players")]
     [SerializeField] private Transform player1;
@@ -42,6 +46,10 @@ public class GameManager : MonoBehaviour
         items.Add(tp, 2);
         items.Add(washingPowder, 1);
         items.Add(soap, 4);
+        items.Add(bread, 2);
+        items.Add(coffee, 2);
+        items.Add(coke, 1);
+        items.Add(DishSoap, 4);
 
         Debug.Log("=== Dictionary Initialized ===");
         foreach (var kvp in items)

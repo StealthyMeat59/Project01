@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 965527500034e61428eb69d74e0bdfa8
+guid: 10930ca452363374288f725b0a86b803
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7468186504927270930
-    second: COKE COLA_0
+      213: -657708361989600386
+    second: LAUNDERY DETERGENT_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: COKE COLA_0
+      name: LAUNDERY DETERGENT_0
       rect:
         serializedVersion: 2
-        x: 230
-        y: 77
-        width: 149
-        height: 468
+        x: 21
+        y: 15
+        width: 479
+        height: 482
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee7a17121fbab5890800000000000000
-      internalID: -7468186504927270930
+      spriteID: e7b4ecdbab95fd6f0800000000000000
+      internalID: -657708361989600386
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      COKE COLA_0: -7468186504927270930
+      LAUNDERY DETERGENT_0: -657708361989600386
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

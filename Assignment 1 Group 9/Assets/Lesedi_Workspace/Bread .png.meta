@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 965527500034e61428eb69d74e0bdfa8
+guid: 711016570235f514ab161869916e29e6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7468186504927270930
-    second: COKE COLA_0
+      213: 1020731305040311310
+    second: Bread _0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: COKE COLA_0
+      name: Bread _0
       rect:
         serializedVersion: 2
-        x: 230
-        y: 77
-        width: 149
-        height: 468
+        x: 35
+        y: 31
+        width: 188
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee7a17121fbab5890800000000000000
-      internalID: -7468186504927270930
+      spriteID: e047c00c6bd5a2e00800000000000000
+      internalID: 1020731305040311310
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      COKE COLA_0: -7468186504927270930
+      Bread _0: 1020731305040311310
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
